@@ -1,0 +1,314 @@
+
+:root {
+    --base-size: 1rem;
+    --scale: 1.25;
+    --h5: calc(var(--base-size) * var(--scale));
+    --h4: calc(var(--h5) * var(--scale));
+    --h3: calc(var(--h4) * var(--scale));
+    --h2: calc(var(--h3) * var(--scale));
+    --h1: calc(var(--h2) * var(--scale));
+    
+    --bg-color: #f1eaf1;
+    --font: "Poppins", sans-serif;
+    
+    
+
+ }
+
+   html {
+    box-sizing: border-box;
+   }
+   *,
+   *::before,
+   *::after {
+    box-sizing: inherit;
+   }
+
+   * {
+    --background: initial;
+    --font-size: initial;
+    --font-weigth: initial;
+    --font-family: initial;
+    --text-align: initial;
+    --color: initial;
+    --margin: initial;
+    --padding: initial;
+
+    background: var(--background);
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+    font-weight: var(--font-weigth);
+    text-align: var(--text-align);
+    color: var(--color);
+    margin: var(--margin);
+    padding: var(--padding);
+
+   }
+
+   body {
+     display: flex;
+     min-height: 100vh;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     --background: var(--bg-color);
+      background-attachment: fixed;
+      --font-family: var(--font);
+      --font-size: var(--base-size);
+      line-height: 1.7;
+      --text-align: center;
+      --margin: 0;
+    --padding: 0;
+      
+   }
+
+   .wrapper {
+    --padding:  2.5rem;
+   }
+
+      /* title */
+
+   .page-title {
+    --font-weigth: 800;
+        --font-size: 2.5rem;
+        letter-spacing: 3px;
+      
+    }
+    .title-style {
+        --background: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+        --padding: .2em 1.3em .2em .7em;
+        border-radius: 15px 20px;
+        --color: aliceblue;
+        display: block;
+        --text-align: center;
+       
+    }
+    .title-style, .container-details > * {
+        width: 90%;
+        margin: 0 auto;
+        
+    }
+
+
+    /* form elements */
+
+    .form label {
+        --font-size: 1.3rem;
+        --font-weight: 600;
+        display: inline-block;
+        --padding: 1rem;
+    }
+
+    #birth {
+        --padding: 1rem;
+        margin-left: 1rem;
+        letter-spacing: .5rem;
+        --font-size: 1.3rem;
+        outline: 0;
+       font-weight: 800;
+        border: 3px solid #9599E2;
+    }
+
+    #birth:focus {
+        --background: #e9e1e9;
+        border: 15px solid  #6c6ea1 ;
+    }
+
+
+   .birthday-date {
+        display: block;
+        margin-top: 0px;
+        --padding: 1rem;
+        --font-weight: 600;
+        font-style: italic;
+        --font-size: 1.5rem;
+    }
+
+    .display-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+   input[type="number"] {
+    --padding: .2em 1.25em;
+    width: 50%;
+    margin-bottom: 1.8rem;
+    --text-align: center;
+    --font-size: 1.5rem;
+    --font-weight: 800;
+    font-style: italic;
+    --color: #23287f;
+    border-radius: 5px;
+    border: 0;
+    box-shadow: 2px 8px 2px #3b3c63;
+   }
+
+    .btn  {
+      border: 0;
+      outline: 0;
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+      transform: translateY(0);
+      transition: transfrom 1s ease-in;
+      --background: #8BC6EC linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+      margin-top: 1.4rem;
+      cursor: pointer;
+    }
+
+    .btn:active {
+        transform: translateY(10%);
+    }
+
+    /* AGE DETAILS */
+
+    .container-details > * {
+        --font-size: 3rem;
+        --font-weight: 800;
+        font-style: italic; 
+    }
+
+    .details {
+        padding-bottom: 2rem;
+    }
+    .details:last-child {
+        padding-top: 1rem;
+    }
+
+    .dashes {
+        --text-align: center;
+        position: relative;
+        --margin: 0;
+        --padding: 0 1.7rem;
+        --color: #9599E2;
+        --font-size: 4rem;
+    }
+    .dashes::before {
+        content: "___";
+        position: absolute;
+        left: 0px;
+        top: 0;
+        width: 100%;
+        height: 3%;
+        display: block;
+        z-index: 1; 
+        --color: #9599E2;
+    }
+
+
+    /* MEDIA QUERIES */
+    
+    @media (min-width: 500px) {
+        .title-style {
+            --padding: .1em .3em;
+            border-radius: 15px 40px;
+        
+    }
+    }
+
+    @media (min-width: 641px) {
+       .page-title {
+        --font-size: var(--h2);
+       }
+
+        .title-style {
+        --padding: .5em 2em;
+        border-radius: 25px 40px;
+    }
+
+    .btn {
+        margin-bottom: 2rem;
+    }
+
+    .form label {
+        --font-size: var(--h3);
+        --font-weight: 800;
+        display: block;
+    }
+    
+    input[type="date"] {
+       width: 70%;
+    }
+
+    #birth:focus {
+        border: none;
+        box-shadow: 0px 5px 4px rgba(0,0,0,.5);
+    }
+    }
+
+    @media (min-width: 768px) {
+        body {
+            --font-size: var(--h1);
+        }
+    }
+
+    @media (min-width: 815px) {
+        .title-style {
+        --padding: .2em .5em;
+        border-radius: 25px 10px 30px 40px;
+    }
+        .form {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: var(--h1);
+        }
+
+        .form label {
+        --font-size: var(--h4);
+        --font-weight: 600;
+        display: inline-block;
+      }
+
+      #birth {
+        border: none;
+        box-shadow: 0px 5px 4px rgba(0,0,0,.5);
+      }
+
+        .btn {
+        margin-bottom: 0;
+       }
+
+       .container-details > * {
+        --font-size: 4rem;
+    }
+    }
+    @media (min-width: 1024px) {
+        :root {
+            --scale: 1.3;
+        }
+        .page-title, .details, .dashes {
+            --font-size: 5rem;
+        }
+         #birth {
+            --font-size: 3rem;
+        box-shadow: 1px 7px 4px rgba(0,0,0,.5);
+        }
+
+        .form label, .birthday-date {
+            --font-size: 2.5rem;
+            font-weight: 400;
+        }
+       
+        .btn svg{
+            transform: translateY(-25%);
+        }
+
+        .btn {
+            width: 9rem;
+            height: 8rem;
+            border-radius: 25%;
+        }
+        input[type="number"] {
+            --padding: 2rem;
+            --font-size: var(--h2);
+            margin-bottom: 2.5rem;
+        }
+        .form  {
+            padding-top: var(--h2);
+        }
+    }
+   
